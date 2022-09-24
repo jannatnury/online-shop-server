@@ -24,26 +24,26 @@ const productSchema = new mongoose.Schema({
     ],
     category: {
         type: String, required: [true, "Please enter Product Cetegory"]
-    },
-    review:[
-        {
-            name:{
-                type: String,
-                required: true, 
-            },
-            rating:{
-                type: Number,
-                required: true, 
-            },
-            coment:{
-                type: String
-            },
-            createDate:{
-                type:Number,
-                default:Date.now
-            }
-        }
-    ]
+    }
+    // review:[
+    //     {
+    //         name:{
+    //             type: String,
+    //             required: true, 
+    //         },
+    //         rating:{
+    //             type: Number,
+    //             required: true, 
+    //         },
+    //         comment:{
+    //             type: String
+    //         },
+    //         createDate:{
+    //             type:Number,
+    //             default:Date.now
+    //         }
+    //     }
+    // ]
 
 });
 

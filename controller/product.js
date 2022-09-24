@@ -3,11 +3,12 @@ import productData from "../models/productData.js";
 // Create product
 const createProduct = async (req, res) => {
     try {
-        const { name, details, price, stock,image, category,rating, review} = req.body;
-        if (name && details && price && stock && image && category && rating) {
+        console.log("get all products");
+        const { name, details, price, stock,image, category} = req.body;
+        if (name && details && price && stock && image && category) {
 
             const product = new productData({
-                name: name, details: details, price: price, stock: stock
+                name: name, details: details, price: price, stock: stock, category: category, image: image
             });
             const data = await product.save();
             return res.send(data);
@@ -24,8 +25,10 @@ const createProduct = async (req, res) => {
 // get all product
 const getProduct = async (req, res) => {
     try {
+        console.log("get all products");
         const result = await productData.find({});
         res.send(result);
+        
 
     } catch (error) {
         console.log(error);
@@ -36,6 +39,7 @@ const getProduct = async (req, res) => {
 
 const getSingleProduct = async (req, res) => {
     try {
+        console.log("get all products");
         const id = req.params.id;
         const result = await productData.findById(id);
         res.send(result);
@@ -48,6 +52,7 @@ const getSingleProduct = async (req, res) => {
 // Delete Product
 const productDelete = async (req, res) => {
     try {
+        console.log("get all products");
         const id = req.params.id;
         const product = await productData.findById(id);
         if (product) {

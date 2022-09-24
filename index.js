@@ -24,7 +24,7 @@ app.use(express.json());
 app.get('/', async(req, res)=>{
      res.send("Server is Running...");
 });
-app.get('/product', productRoute);
+app.use('/api/v1/products', productRoute);
 
 // app.use('')
 // Listing to port

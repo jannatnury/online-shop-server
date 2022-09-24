@@ -4,8 +4,8 @@ import { createProduct, getProduct, getSingleProduct, productDelete } from "../c
 const router = Router();
 
 
-router.get('/product', getProduct);
-router.post('/api/product/new', createProduct);
+router.get('/', getProduct);
+router.post('/', createProduct);
 router.get('/:id', getSingleProduct);
 router.delete('/:id', productDelete);
 
